@@ -72,12 +72,13 @@ def save_modules_to_file(modules, filename):
             f.write(f"{module}\n")
 
 
-directory_path: str = "../."
-modules_used = find_modules_in_directory2(directory_path)
-print("Modules used in the directory:")
-for module in modules_used:
-    print(module)
+if "__name__" == "__main__":
+    directory_path: str = "../."
+    modules_used = find_modules_in_directory2(directory_path)
+    print("Modules used in the directory:")
+    for module in modules_used:
+        print(module)
 
-# Save to file
-save_modules_to_file(modules_used, "modules_used.txt")
-# ...existing code...
+    # Save to file
+    save_modules_to_file(modules_used, "modules_used.txt")
+    print("Modules saved to modules_used.txt")
