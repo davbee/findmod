@@ -1,3 +1,22 @@
+"""
+findmod.py
+
+A utility script to recursively scan a directory for Python files and extract all imported modules.
+It uses the `ast` module to parse Python source files and collect both `import` and `from ... import ...` statements.
+
+Functions:
+- find_modules_in_directory(directory): Walks the directory tree using os.walk and collects imported modules.
+- find_modules_in_directory2(directory): Uses glob to recursively find Python files and collects imported modules.
+- save_modules_to_file(modules, filename): Saves the set of found modules to a text file, one per line.
+
+Usage:
+- Set the `directory_path` variable to the target directory.
+- The script prints all found modules and saves them to "modules_used.txt".
+
+Note:
+- Syntax errors in Python files are reported and skipped.
+"""
+
 import ast
 import glob
 import os
